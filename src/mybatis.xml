@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<properties resource="db.properties"/>
+<typeAliases>
+<package name="com.problem.entity"/>
+<package name="com.problem.vo"/>
+<package name="com.problem.dto"/>
+</typeAliases>
+	<environments default="mysql">
+		<environment id="mysql">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"/><!-- ${}替换的值是db.properties中的driver -->
+				<property name="url" value="${url}"/>
+				<property name="username" value="${username}"/>
+				<property name="password" value="${password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+<!--加载映射文件  -->
+<mappers>
+	<package name="com.problem.daoMapper"/>
+</mappers>
+</configuration>

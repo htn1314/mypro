@@ -1,0 +1,9 @@
+package com.problem.service;
+public interface QuestionService {
+    
+	/**
+	 * …æ≥˝Œ Ã‚°£
+	 * @param ids
+	 */
+	void deleteQuestion(int [] ids);
+}

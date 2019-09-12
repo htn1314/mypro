@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+动态代理的开发规则
+1.接口的全路径 
+2.接口的方法名必须与 sql id 名一致
+3.接口的入参必须与parameterType类型一直
+4.接口的返回值必须与resultType类型一致
+
+mapper namspace 的值是否能够改变？
+-->
+<mapper namespace="com.problem.daoMapper.UserDaoMapper">
+	<select id="findByUserNameAndPassword" parameterType="USer" resultType="USer"> 
+		select * from user where username=#{username} and password=#{password}
+	</select>
+	<!-- 查询全部用户的时候，没有入参，只有返回 list resultType -->
+	<select id="findAll" resultType="USer"> 
+		select * from user
+	</select>
+	
+</mapper>
